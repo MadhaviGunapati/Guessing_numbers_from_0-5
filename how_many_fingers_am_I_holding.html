@@ -16,6 +16,14 @@
 		<button id="guess">Guess!</button>
 		
 		<script>
+		function doAGuess(correctAnswer){
+			var randNum = Math.floor(Math.random() * 6);
+			if(randNum == correctAnswer){
+				return (true);
+			} else {
+				return (false);
+			}
+		}
 		document.getElementById("guess").onclick= function(){
 			
 			var guessNum = document.getElementById("fingers").value;
@@ -26,9 +34,9 @@
 			
 			while(gotIt == false){
 				
-					var randNum = Math.floor(Math.random() * 6);
+					
 			
-				if(randNum == guessNum ){
+				if(doAGuess(guessNum) ){
 					gotIt = true;
 					alert("You got it! It was a " + guessNum +". It took me " + numberOfGuesses +" guesses.");
 				} else {
