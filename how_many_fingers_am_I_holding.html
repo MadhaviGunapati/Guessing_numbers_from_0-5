@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>How many fingers am I holding!</title>
+		
+	</head>
+	<body>
+		<p>Guess the fingers I'm holding in one hand? </p><input type="text" name="fingers" id="fingers">
+		<button id="guess">Guess!</button>
+		
+		<script>
+		document.getElementById("guess").onclick= function(){
+			
+			var guessNum = document.getElementById("fingers").value;
+			
+			var numberOfGuesses = 1;
+			
+			var gotIt = false;
+			
+			while(gotIt == false){
+				
+					var randNum = Math.floor(Math.random() * 6);
+			
+				if(randNum == guessNum ){
+					gotIt = true;
+					alert("You got it! It was a " + guessNum +". It took me " + numberOfGuesses +" guesses.");
+				} else {
+					numberOfGuesses++;
+				}
+				}
+			}
+		
+		</script>
+	</body>
+</html>
